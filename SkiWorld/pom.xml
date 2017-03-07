@@ -92,5 +92,6 @@
     <module>SkiWorld-ejb</module>
     <module>SkiWorld-web</module>
     <module>SkiWorld-ear</module>
+    <module>SkiWorld-client</module>
   </modules>
 </project>
