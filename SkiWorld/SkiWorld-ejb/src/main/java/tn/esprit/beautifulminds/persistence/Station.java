@@ -23,6 +23,12 @@ public class Station implements Serializable {
 	private String address;
 	private String area;
 	private String description;
+
+	@OneToMany(mappedBy = "station")
+	private List<Staff> staffs;
+
+	@OneToMany(mappedBy = "station")
+	private List<Training> trainings;
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "station")

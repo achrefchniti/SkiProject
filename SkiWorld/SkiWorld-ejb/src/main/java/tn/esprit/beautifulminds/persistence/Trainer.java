@@ -1,8 +1,10 @@
 package tn.esprit.beautifulminds.persistence;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Trainer
@@ -21,6 +23,9 @@ public class Trainer extends Person implements Serializable {
 	private String description;
 	private String categorie;
 	private Integer ratingPoints;
+
+	@OneToMany(mappedBy = "trainerstaff")
+	private List<Training> trainings;
 	private static final long serialVersionUID = 1L;
 
 	public Trainer() {

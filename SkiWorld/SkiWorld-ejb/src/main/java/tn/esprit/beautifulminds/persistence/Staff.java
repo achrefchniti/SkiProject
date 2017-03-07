@@ -1,8 +1,11 @@
 package tn.esprit.beautifulminds.persistence;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Staff
@@ -17,6 +20,15 @@ public class Staff extends Person implements Serializable {
 	private String role;
 	private Integer nbjT;
 	private Integer nbjR;
+
+	@ManyToOne
+	private Staff staff;
+
+	@OneToMany(mappedBy = "staff")
+	private List<Staff> staffs;
+
+	@ManyToOne
+	private Station station;
 	private static final long serialVersionUID = 1L;
 
 	public Staff() {

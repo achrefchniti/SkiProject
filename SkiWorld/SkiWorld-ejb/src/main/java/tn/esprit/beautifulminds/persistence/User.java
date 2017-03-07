@@ -1,8 +1,10 @@
 package tn.esprit.beautifulminds.persistence;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 
 /**
  * Entity implementation class for Entity: User
@@ -15,6 +17,9 @@ public class User extends Person implements Serializable {
 	private String email;
 	private String passwd;
 	private Boolean Vip;
+
+	@ManyToMany(mappedBy = "users")
+	private List<Training> Trainings;
 	private static final long serialVersionUID = 1L;
 
 	public User() {
