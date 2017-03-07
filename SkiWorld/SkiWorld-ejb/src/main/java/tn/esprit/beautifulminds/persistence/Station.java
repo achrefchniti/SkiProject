@@ -29,6 +29,10 @@ public class Station implements Serializable {
 
 	@OneToMany(mappedBy = "station")
 	private List<Training> trainings;
+	
+	@OneToMany(mappedBy="station_event")
+	private List<Event> event_station;
+	
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "station")
@@ -92,6 +96,14 @@ public class Station implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<Event> getEvent_station() {
+		return event_station;
+	}
+
+	public void setEvent_station(List<Event> event_station) {
+		this.event_station = event_station;
 	}
 
 }

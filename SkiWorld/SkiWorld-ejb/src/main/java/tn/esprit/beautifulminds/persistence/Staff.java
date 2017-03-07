@@ -4,8 +4,11 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+
 
 /**
  * Entity implementation class for Entity: Staff
@@ -26,10 +29,16 @@ public class Staff extends Person implements Serializable {
 
 	@OneToMany(mappedBy = "staff")
 	private List<Staff> staffs;
+	
+	@ManyToMany(mappedBy = "staff_event")
+	private List<Event> event_staff;
 
 	@ManyToOne
 	private Station station;
 	private static final long serialVersionUID = 1L;
+	
+	@ManyToOne
+	private Shop shops;
 
 	public Staff() {
 		super();
@@ -73,6 +82,22 @@ public class Staff extends Person implements Serializable {
 
 	public void setNbjR(Integer nbjR) {
 		this.nbjR = nbjR;
+	}
+
+	public List<Event> getEvent_staff() {
+		return event_staff;
+	}
+
+	public void setEvent_staff(List<Event> event_staff) {
+		this.event_staff = event_staff;
+	}
+
+	public Shop getShops() {
+		return shops;
+	}
+
+	public void setShops(Shop shops) {
+		this.shops = shops;
 	}
 
 }
