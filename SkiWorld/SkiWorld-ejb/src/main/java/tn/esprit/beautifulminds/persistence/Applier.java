@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Applier
@@ -17,8 +18,19 @@ public class Applier extends Person implements Serializable {
 	private String role;
 	private static final long serialVersionUID = 1L;
 
+	@ManyToOne
+	private Admin admin;
+
 	public Applier() {
 		super();
+	}
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
 	}
 
 	public Applier(Integer personId, String firstName, String lastName, Date birthday, String nationality,

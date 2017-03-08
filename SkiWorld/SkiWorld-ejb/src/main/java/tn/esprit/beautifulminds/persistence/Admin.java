@@ -2,8 +2,10 @@ package tn.esprit.beautifulminds.persistence;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Admin
@@ -16,6 +18,37 @@ public class Admin extends Person implements Serializable {
 	private String email;
 	private String password;
 	private static final long serialVersionUID = 1L;
+	@OneToMany(mappedBy = "admin")
+	private List<Feedback> feedbacks;
+	@OneToMany(mappedBy = "admin")
+	private List<Memory> memories;
+
+	@OneToMany(mappedBy = "admin")
+	private List<Applier> appliers;
+
+	public List<Applier> getAppliers() {
+		return appliers;
+	}
+
+	public void setAppliers(List<Applier> appliers) {
+		this.appliers = appliers;
+	}
+
+	public List<Feedback> getFeedbacks() {
+		return feedbacks;
+	}
+
+	public void setFeedbacks(List<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
+	}
+
+	public List<Memory> getMemories() {
+		return memories;
+	}
+
+	public void setMemories(List<Memory> memories) {
+		this.memories = memories;
+	}
 
 	public Admin() {
 		super();

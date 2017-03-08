@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 public class Customer extends Person implements Serializable {
 
 	private Integer bookingId;
+
 	private Integer stationId;
 	private String type;
 	private String category;

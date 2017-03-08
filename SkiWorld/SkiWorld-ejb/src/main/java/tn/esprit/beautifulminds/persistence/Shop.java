@@ -19,6 +19,22 @@ public class Shop implements Serializable {
 	@Id
 	private Integer shopId;
 
+	public List<Material> getMaterials() {
+		return materials;
+	}
+
+	public void setMaterials(List<Material> materials) {
+		this.materials = materials;
+	}
+
+	public List<Staff> getShops() {
+		return shops;
+	}
+
+	public void setShops(List<Staff> shops) {
+		this.shops = shops;
+	}
+
 	public Integer getShopId() {
 		return shopId;
 	}
@@ -27,22 +43,14 @@ public class Shop implements Serializable {
 		this.shopId = shopId;
 	}
 
-	@OneToMany(mappedBy = "shop_material")
-	private List<Material> material_shop;
-
-	public List<Material> getMaterial_shop() {
-		return material_shop;
-	}
-
-	public void setMaterial_shop(List<Material> material_shop) {
-		this.material_shop = material_shop;
-	}
+	@OneToMany(mappedBy = "shop")
+	private List<Material> materials;
 
 	@ManyToOne
 	private Station station_shop;
 
-	@OneToMany(mappedBy = "shops")
-	private List<Staff> staff_shop;
+	@OneToMany(mappedBy = "shop")
+	private List<Staff> shops;
 
 	public Station getStation_shop() {
 		return station_shop;
@@ -50,14 +58,6 @@ public class Shop implements Serializable {
 
 	public void setStation_shop(Station station_shop) {
 		this.station_shop = station_shop;
-	}
-
-	public List<Staff> getStaff_shop() {
-		return staff_shop;
-	}
-
-	public void setStaff_shop(List<Staff> staff_shop) {
-		this.staff_shop = staff_shop;
 	}
 
 	private static final long serialVersionUID = 1L;

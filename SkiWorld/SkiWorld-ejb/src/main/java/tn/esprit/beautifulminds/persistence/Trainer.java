@@ -32,6 +32,14 @@ public class Trainer extends Person implements Serializable {
 		super();
 	}
 
+	public List<Training> getTrainings() {
+		return trainings;
+	}
+
+	public void setTrainings(List<Training> trainings) {
+		this.trainings = trainings;
+	}
+
 	public String getExpirence() {
 		return this.expirence;
 	}

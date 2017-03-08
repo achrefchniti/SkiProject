@@ -134,4 +134,28 @@ public class Training implements Serializable {
 		this.capacity = capacity;
 	}
 
+	public Trainer getTrainerstaff() {
+		return trainerstaff;
+	}
+
+	public void setTrainerstaff(Trainer trainerstaff) {
+		this.trainerstaff = trainerstaff;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	public Station getStation() {
+		return station;
+	}
+
+	public void setStation(Station station) {
+		this.station = station;
+	}
+
 }

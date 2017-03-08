@@ -8,8 +8,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-
-
 /**
  * Entity implementation class for Entity: Staff
  *
@@ -29,16 +27,16 @@ public class Staff extends Person implements Serializable {
 
 	@OneToMany(mappedBy = "staff")
 	private List<Staff> staffs;
-	
-	@ManyToMany(mappedBy = "staff_event")
-	private List<Event> event_staff;
+
+	@ManyToMany(mappedBy = "eventStaffs")
+	private List<Event> staffEvents;
 
 	@ManyToOne
 	private Station station;
 	private static final long serialVersionUID = 1L;
-	
+
 	@ManyToOne
-	private Shop shops;
+	private Shop shop;
 
 	public Staff() {
 		super();
@@ -84,20 +82,44 @@ public class Staff extends Person implements Serializable {
 		this.nbjR = nbjR;
 	}
 
-	public List<Event> getEvent_staff() {
-		return event_staff;
+	public Staff getStaff() {
+		return staff;
 	}
 
-	public void setEvent_staff(List<Event> event_staff) {
-		this.event_staff = event_staff;
+	public void setStaff(Staff staff) {
+		this.staff = staff;
 	}
 
-	public Shop getShops() {
-		return shops;
+	public List<Staff> getStaffs() {
+		return staffs;
 	}
 
-	public void setShops(Shop shops) {
-		this.shops = shops;
+	public void setStaffs(List<Staff> staffs) {
+		this.staffs = staffs;
+	}
+
+	public List<Event> getStaffEvents() {
+		return staffEvents;
+	}
+
+	public void setStaffEvents(List<Event> staffEvents) {
+		this.staffEvents = staffEvents;
+	}
+
+	public Station getStation() {
+		return station;
+	}
+
+	public void setStation(Station station) {
+		this.station = station;
+	}
+
+	public Shop getShop() {
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
 	}
 
 }
