@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 public class Trainer extends Person implements Serializable {
 
 	private String email;
-	private String passwd;
+	private String password;
 	private String role;
 	private Integer nbjT;
 	private Integer nbjR;
@@ -80,14 +80,6 @@ public class Trainer extends Person implements Serializable {
 		this.email = email;
 	}
 
-	public String getPasswd() {
-		return this.passwd;
-	}
-
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
-
 	public String getRole() {
 		return this.role;
 	}
@@ -110,6 +102,14 @@ public class Trainer extends Person implements Serializable {
 
 	public void setNbjR(Integer nbjR) {
 		this.nbjR = nbjR;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
