@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 public class User extends Person implements Serializable {
 
 	private String email;
-	private String passwd;
+	private String password;
 	private Boolean vip;
 
 	@ManyToMany(mappedBy = "users")
@@ -98,20 +98,20 @@ public class User extends Person implements Serializable {
 		this.email = email;
 	}
 
-	public String getPasswd() {
-		return this.passwd;
-	}
-
-	public void setPasswd(String passwd) {
-		this.passwd = passwd;
-	}
-
 	public Boolean getVip() {
 		return this.vip;
 	}
 
 	public void setVip(Boolean vip) {
 		this.vip = vip;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
