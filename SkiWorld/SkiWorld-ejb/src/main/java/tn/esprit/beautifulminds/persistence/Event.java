@@ -17,7 +17,7 @@ import javax.persistence.ManyToMany;
 public class Event implements Serializable {
 
 	@Id
-	private Integer id_event;
+	private Integer eventId;
 
 	private Date date_debut;
 	private Date date_fin;
@@ -50,12 +50,12 @@ public class Event implements Serializable {
 		super();
 	}
 
-	public Integer getId_event() {
-		return this.id_event;
+	public Integer getEventId() {
+		return eventId;
 	}
 
-	public void setId_event(Integer id_event) {
-		this.id_event = id_event;
+	public void setEventId(Integer eventId) {
+		this.eventId = eventId;
 	}
 
 	public Date getDate_debut() {
