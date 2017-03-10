@@ -1,5 +1,7 @@
 package tn.esprit.beautifulminds.gui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.naming.Context;
@@ -10,15 +12,17 @@ import tn.esprit.beautifulminds.persistence.Trainer;
 import tn.esprit.beautifulminds.services.crud.TrainerServicesRemote;
 
 public class TestAddTrainer {
-	public static void main(String[] args) throws NamingException {
+	public static void main(String[] args) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		TrainerServicesRemote trainerServicesRemote = (TrainerServicesRemote) context.lookup(
 				"projet-personnel-ear/projet-personnel-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
 
 		String firstName = "snake";
 		String lastName = "shark";
-		@SuppressWarnings("deprecation")
-		Date birthday = new Date(85, 02, 03);
+		
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		Date birthday = format.parse("22-04-1994");
+		
 		String nationality = "tunisienne";
 		String gender = "male";
 		String email = "snake@gmail.com";
