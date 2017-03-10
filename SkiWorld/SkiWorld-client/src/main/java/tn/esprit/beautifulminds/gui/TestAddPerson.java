@@ -1,5 +1,7 @@
 package tn.esprit.beautifulminds.gui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.naming.Context;
@@ -10,15 +12,15 @@ import tn.esprit.beautifulminds.persistence.Person;
 import tn.esprit.beautifulminds.services.crud.PersonServicesRemote;
 
 public class TestAddPerson {
-	public static void main(String[] args) throws NamingException {
+	public static void main(String[] args) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		PersonServicesRemote personServicesRemote = (PersonServicesRemote) context.lookup(
 				"projet-personnel-ear/projet-personnel-ejb/PersonServices!tn.esprit.beautifulminds.services.crud.PersonServicesRemote");
 
 		String firstName = "snake";
 		String lastName = "shark";
-		@SuppressWarnings("deprecation")
-		Date birthday = new Date(79,10,30);
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		Date birthday = format.parse("22-04-1994");
 		String nationality = "tunisienne";
 		String gender = "male";
 		Person p = new Person(firstName, lastName, birthday, nationality, gender);

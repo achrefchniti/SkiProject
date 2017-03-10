@@ -1,5 +1,7 @@
 package tn.esprit.beautifulminds.gui;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.naming.Context;
@@ -10,7 +12,7 @@ import tn.esprit.beautifulminds.persistence.Training;
 import tn.esprit.beautifulminds.services.crud.TrainingservicesRemote;
 
 public class TestAddTraining {
-	public static void main(String[] args) throws NamingException {
+	public static void main(String[] args) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
 				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
@@ -20,7 +22,9 @@ public class TestAddTraining {
 		String categorie = "amateur";
 		// Date dateBegin = new Date(System.currentTimeMillis());
 		@SuppressWarnings("deprecation")
-		Date dateBegin = new Date(17, 3, 8);
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+		Date dateBegin = format.parse("12-03-2017");
+
 		Integer hourBegin = 13;
 		Integer durationDay = 5;
 		Integer durationHour = 1;
