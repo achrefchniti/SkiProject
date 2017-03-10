@@ -30,7 +30,7 @@ public class Training implements Serializable {
 	private Integer durationDay;
 	private Integer durationHour;
 	private String trainer;
-	private Float fees;
+	private float fees;
 	private Integer capacity;
 
 	@ManyToOne
@@ -44,6 +44,36 @@ public class Training implements Serializable {
 
 	public Training() {
 		super();
+	}
+
+	public Training(String name, String type, String categorie, Date dateBegin, Integer hourBegin, Integer durationDay,
+			Integer durationHour, String trainer, float fees, Integer capacity) {
+		super();
+		Name = name;
+		this.type = type;
+		this.categorie = categorie;
+		this.dateBegin = dateBegin;
+		this.hourBegin = hourBegin;
+		this.durationDay = durationDay;
+		this.durationHour = durationHour;
+		this.trainer = trainer;
+		this.fees = fees;
+		this.capacity = capacity;
+	}
+
+	public Training(String name, String type, String categorie, Integer hourBegin, Integer durationDay,
+			Integer durationHour, String trainer, float fees, Integer capacity) {
+		super();
+		Name = name;
+		this.type = type;
+		this.categorie = categorie;
+		this.hourBegin = hourBegin;
+		this.durationDay = durationDay;
+		this.durationHour = durationHour;
+		this.trainer = trainer;
+		this.fees = fees;
+		this.capacity = capacity;
+
 	}
 
 	public Integer getIdTraining() {
@@ -122,7 +152,7 @@ public class Training implements Serializable {
 		return this.fees;
 	}
 
-	public void setFees(Float fees) {
+	public void setFees(float fees) {
 		this.fees = fees;
 	}
 

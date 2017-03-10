@@ -1,6 +1,7 @@
 package tn.esprit.beautifulminds.persistence;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -41,6 +42,34 @@ public class Staff extends Person implements Serializable {
 	public Staff() {
 		super();
 	}
+	
+
+	public Staff(String firstName, String lastName, Date birthday, String nationality, String gender,
+			String email, String password, String role, Integer nbjT, Integer nbjR) {
+		super(firstName, lastName, birthday, nationality, gender);
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.nbjT = nbjT;
+		this.nbjR = nbjR;
+	}
+
+	public Staff(Integer personId, String firstName, String lastName, Date birthday, String nationality, String gender,
+			String email, String password, String role, Integer nbjT, Integer nbjR, Staff staff, List<Staff> staffs,
+			List<Event> staffEvents, Station station, Shop shop) {
+		super(personId, firstName, lastName, birthday, nationality, gender);
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.nbjT = nbjT;
+		this.nbjR = nbjR;
+		this.staff = staff;
+		this.staffs = staffs;
+		this.staffEvents = staffEvents;
+		this.station = station;
+		this.shop = shop;
+	}
+
 
 	public String getEmail() {
 		return this.email;
