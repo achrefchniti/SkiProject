@@ -18,11 +18,11 @@ import javax.persistence.OneToMany;
 public class Station implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer stationId;
 	private String name;
-	private Float longitude;
-	private Float latitude;
+	private float longitude;
+	private float latitude;
 	private String address;
 	private String area;
 	private String description;
@@ -82,19 +82,19 @@ public class Station implements Serializable {
 		this.name = name;
 	}
 
-	public Float getLongitude() {
+	public float getLongitude() {
 		return this.longitude;
 	}
 
-	public void setLongitude(Float longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 
-	public Float getLatitude() {
+	public float getLatitude() {
 		return this.latitude;
 	}
 
-	public void setLatitude(Float latitude) {
+	public void setLatitude(float latitude) {
 		this.latitude = latitude;
 	}
 
