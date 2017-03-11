@@ -1,6 +1,4 @@
-package tn.esprit.beautifulminds.gui;
-
-import java.util.List;
+package tn.esprit.beautifulminds.tests;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -9,16 +7,15 @@ import javax.naming.NamingException;
 import tn.esprit.beautifulminds.persistence.Training;
 import tn.esprit.beautifulminds.services.crud.TrainingservicesRemote;
 
-public class TestFindAllTraining {
+public class TestUpdateTraining {
 	public static void main(String[] args) throws NamingException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
 				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
-		List<Training> training = trainingservicesRemote.findAllTrainings();
+		Training training = trainingservicesRemote.findTrainingById(2);
+		training.setName("SkiBoard");
 
-		for (Training t : training) {
-			System.out.println(t.getType());
-		}
+		trainingservicesRemote.updateTraining(training);
 
 	}
 

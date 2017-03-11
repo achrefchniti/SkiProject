@@ -1,4 +1,4 @@
-package tn.esprit.beautifulminds.gui;
+package tn.esprit.beautifulminds.tests;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

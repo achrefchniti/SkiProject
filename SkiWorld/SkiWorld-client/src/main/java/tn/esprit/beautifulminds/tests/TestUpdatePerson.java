@@ -1,4 +1,4 @@
-package tn.esprit.beautifulminds.gui;
+package tn.esprit.beautifulminds.tests;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
