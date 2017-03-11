@@ -34,7 +34,7 @@ public class LoginController {
 		String password = pwdtext.getText();
 
 		LoginServiceRemote lsr = (LoginServiceRemote) context.lookup(
-				"MySkiWorld-ear/MySkiWorld-ejb/LoginService!tn.esprit.beautifulminds.services.other.LoginServiceRemote");
+				"SkiWorld-ear/SkiWorld-ejb/LoginService!tn.esprit.beautifulminds.services.other.LoginServiceRemote");
 		Admin admin = new Admin();
 		System.out.println("email=" + email);
 		admin.setEmail(email);

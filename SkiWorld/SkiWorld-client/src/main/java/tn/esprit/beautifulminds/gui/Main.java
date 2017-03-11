@@ -8,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import tn.esprit.beautifulminds.services.other.LoginServiceRemote;
 
 public class Main extends Application {
 
