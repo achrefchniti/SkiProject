@@ -19,8 +19,23 @@ import javax.persistence.OneToMany;
 public class Shop implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer shopId;
+	private String name;
+
+	public Shop(String name, List<Material> materials) {
+		super();
+		this.name = name;
+		this.materials = materials;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public List<Material> getMaterials() {
 		return materials;

@@ -19,9 +19,25 @@ import javax.persistence.ManyToOne;
 public class Material implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer materialId;
+	private String name;
 	private String fournisseur;
+
+	public Material(String name, String fournisseur, Shop shop) {
+		super();
+		this.name = name;
+		this.fournisseur = fournisseur;
+		this.shop = shop;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	@ManyToOne
 	private Shop shop;

@@ -14,14 +14,14 @@ public class TestFindAllEvents {
 
 	public static void main(String[] args) throws NamingException, ParseException {
 		Context context = new InitialContext();
-		EventServicesRemote EventServicesRemote = (EventServicesRemote) context
-				.lookup("SkiWorld-ear/SkiWorld-ejb/EventServices!tn.esprit.beautifulminds.services.crud.EventServicesRemote");
+		EventServicesRemote EventServicesRemote = (EventServicesRemote) context.lookup(
+				"SkiWorld-ear/SkiWorld-ejb/EventServices!tn.esprit.beautifulminds.services.crud.EventServicesRemote");
 
 		List<Event> events = EventServicesRemote.findAllEvents();
 
 		for (Event e : events) {
 			System.out.println(e.getDate_debut());
-			System.out.println(e.getDate_fin());
+			System.out.println(e.getTitle());
 		}
 
 	}
