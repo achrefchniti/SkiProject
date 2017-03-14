@@ -20,5 +20,7 @@ public interface StationServicesRemote {
 	void updateStation(Station station);
 
 	List<Station> findAllStations();
+	
+	public List<Station> afficheStation();
 
 }

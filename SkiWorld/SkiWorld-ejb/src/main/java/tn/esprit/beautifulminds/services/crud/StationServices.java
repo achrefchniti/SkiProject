@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import tn.esprit.beautifulminds.persistence.Station;
 
@@ -24,7 +25,6 @@ public class StationServices implements StationServicesRemote, StationServicesLo
 		// TODO Auto-generated constructor stub
 	}
 
-	
 	@Override
 	public void addStation(Station station) {
 		entityManager.persist(station);
@@ -53,6 +53,16 @@ public class StationServices implements StationServicesRemote, StationServicesLo
 
 	public List<Station> findAllStations() {
 		return entityManager.createQuery("select s from Station s ").getResultList();
+	}
+
+	@Override
+	public List<Station> afficheStation() {
+		// TODO Auto-generated method stub
+
+		String jpql = "SELECT S FROM Station S";
+		Query qry = entityManager.createQuery(jpql, Station.class);
+
+		return qry.getResultList();
 	}
 
 }

@@ -17,4 +17,6 @@ public interface StaffServicesRemote {
 	void updateStaff(Staff staff);
 
 	List<Staff> findAllStaffs();
+	
+	public List<Staff> afficheStaff();
 }
