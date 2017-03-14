@@ -25,6 +25,7 @@ public class Training implements Serializable {
 	private String Name;
 	private String type;
 	private String categorie;
+	
 	private Date dateBegin;
 	private Integer hourBegin;
 	private Integer durationDay;
@@ -41,6 +42,24 @@ public class Training implements Serializable {
 	@ManyToOne
 	private Station station;
 	private static final long serialVersionUID = 1L;
+
+	
+
+	public Training(String name, String type, String categorie, Date dateBegin, Integer hourBegin, Integer durationDay,
+			Integer durationHour, String trainer, float fees, Integer capacity, Integer station) {
+		super();
+		Name = name;
+		this.type = type;
+		this.categorie = categorie;
+		this.dateBegin = dateBegin;
+		this.hourBegin = hourBegin;
+		this.durationDay = durationDay;
+		this.durationHour = durationHour;
+		this.trainer = trainer;
+		this.fees = fees;
+		this.capacity = capacity;
+
+	}
 
 	public Training() {
 		super();

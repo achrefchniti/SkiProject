@@ -28,6 +28,17 @@ public class Event implements Serializable {
 	private String place;
 	private String Description;
 
+	public List<Staff> getEventStaffs() {
+		return eventStaffs;
+	}
+
+	public void setEventStaffs(List<Staff> eventStaffs) {
+		this.eventStaffs = eventStaffs;
+	}
+
+	@ManyToMany
+	private List<Staff> eventStaffs;
+
 	public Event(Date date_debut, Date date_fin, String title, String place, String description) {
 		super();
 		this.date_debut = date_debut;

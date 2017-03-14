@@ -17,4 +17,8 @@ public interface TrainingservicesRemote {
 	void updateTraining(Training training);
 
 	List<Training> findAllTrainings();
+
+	Training findTrainingsByType(String type);
+
+	List<Training> findTrainingsByType2(String type);
 }

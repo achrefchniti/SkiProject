@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import tn.esprit.beautifulminds.persistence.Staff;
 
@@ -55,13 +54,10 @@ public class StaffServices implements StaffServicesRemote, StaffServicesLocal {
 	}
 
 	@Override
-	public List<Staff> afficheStaff() {
-		// TODO Auto-generated method stub
+	public List<Staff> findStaffByRole(String role) {
+		return entityManager.createQuery("select a from Staff a where a.role=?1", Staff.class).setParameter(1, role)
+				.getResultList();
 
-		String jpql = "SELECT ST FROM Staff ST";
-		Query qry = entityManager.createQuery(jpql, Staff.class);
-
-		return qry.getResultList();
 	}
 
 }

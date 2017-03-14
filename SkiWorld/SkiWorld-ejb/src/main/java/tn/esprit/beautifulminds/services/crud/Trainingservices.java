@@ -52,4 +52,18 @@ public class Trainingservices implements TrainingservicesRemote, Trainingservice
 		return entityManager.createQuery("select t from Training t ").getResultList();
 	}
 
+	@Override
+	public Training findTrainingsByType(String type) {
+
+		return entityManager.createQuery("select a from Training a where a.type=?1", Training.class)
+				.setParameter(1, type).getSingleResult();
+	}
+
+	@Override
+	public List<Training> findTrainingsByType2(String type) {
+		return entityManager.createQuery("select a from Training a where a.type=?1", Training.class)
+				.setParameter(1, type).getResultList();
+
+	}
+
 }

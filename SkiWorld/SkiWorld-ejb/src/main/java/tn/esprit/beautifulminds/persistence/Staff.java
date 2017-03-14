@@ -20,8 +20,10 @@ public class Staff extends Person implements Serializable {
 	private String email;
 	private String password;
 	private String role;
-	private Integer nbjT;
-	private Integer nbjR;
+	private Integer nbjCA;
+	private Integer nbjCAR;
+	private Integer nbjCM;
+	private Integer nbjCMAR;
 
 	@ManyToOne
 	private Staff staff;
@@ -42,66 +44,61 @@ public class Staff extends Person implements Serializable {
 	public Staff() {
 		super();
 	}
-	
-
-	public Staff(String firstName, String lastName, Date birthday, String nationality, String gender,
-			String email, String password, String role, Integer nbjT, Integer nbjR) {
-		super(firstName, lastName, birthday, nationality, gender);
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		this.nbjT = nbjT;
-		this.nbjR = nbjR;
-	}
-
-	public Staff(Integer personId, String firstName, String lastName, Date birthday, String nationality, String gender,
-			String email, String password, String role, Integer nbjT, Integer nbjR, Staff staff, List<Staff> staffs,
-			List<Event> staffEvents, Station station, Shop shop) {
-		super(personId, firstName, lastName, birthday, nationality, gender);
-		this.email = email;
-		this.password = password;
-		this.role = role;
-		this.nbjT = nbjT;
-		this.nbjR = nbjR;
-		this.staff = staff;
-		this.staffs = staffs;
-		this.staffEvents = staffEvents;
-		this.station = station;
-		this.shop = shop;
-	}
-
 
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public String getRole() {
-		return this.role;
+		return role;
 	}
 
 	public void setRole(String role) {
 		this.role = role;
 	}
 
-	public Integer getNbjT() {
-		return this.nbjT;
+	public Integer getNbjCA() {
+		return nbjCA;
 	}
 
-	public void setNbjT(Integer nbjT) {
-		this.nbjT = nbjT;
+	public void setNbjCA(Integer nbjCA) {
+		this.nbjCA = nbjCA;
 	}
 
-	public Integer getNbjR() {
-		return this.nbjR;
+	public Integer getNbjCAR() {
+		return nbjCAR;
 	}
 
-	public void setNbjR(Integer nbjR) {
-		this.nbjR = nbjR;
+	public void setNbjCAR(Integer nbjCAR) {
+		this.nbjCAR = nbjCAR;
+	}
+
+	public Integer getNbjCM() {
+		return nbjCM;
+	}
+
+	public void setNbjCM(Integer nbjCM) {
+		this.nbjCM = nbjCM;
+	}
+
+	public Integer getNbjCMAR() {
+		return nbjCMAR;
+	}
+
+	public void setNbjCMAR(Integer nbjCMAR) {
+		this.nbjCMAR = nbjCMAR;
 	}
 
 	public Staff getStaff() {
@@ -144,12 +141,60 @@ public class Staff extends Person implements Serializable {
 		this.shop = shop;
 	}
 
-	public String getPassword() {
-		return password;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public void setPassword(String password) {
+	public Staff(Integer personId, String firstName, String lastName, Date birthday, String nationality, String gender,
+			String email, String password, String role, Integer nbjCA, Integer nbjCAR, Integer nbjCM, Integer nbjCMAR,
+			Staff staff, List<Staff> staffs, List<Event> staffEvents, Station station, Shop shop) {
+		super(personId, firstName, lastName, birthday, nationality, gender);
+		this.email = email;
 		this.password = password;
+		this.role = role;
+		this.nbjCA = nbjCA;
+		this.nbjCAR = nbjCAR;
+		this.nbjCM = nbjCM;
+		this.nbjCMAR = nbjCMAR;
+		this.staff = staff;
+		this.staffs = staffs;
+		this.staffEvents = staffEvents;
+		this.station = station;
+		this.shop = shop;
+	}
+
+	public Staff(Integer personId, String firstName, String lastName, Date birthday, String nationality, String gender,
+			String email, String password, String role, Integer nbjCA, Integer nbjCAR, Integer nbjCM, Integer nbjCMAR) {
+		super(personId, firstName, lastName, birthday, nationality, gender);
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.nbjCA = nbjCA;
+		this.nbjCAR = nbjCAR;
+		this.nbjCM = nbjCM;
+		this.nbjCMAR = nbjCMAR;
+	}
+
+	public Staff(String firstName, String lastName, Date birthday, String nationality, String gender, String email,
+			String password, String role, Integer nbjCA, Integer nbjCM) {
+		super(firstName, lastName, birthday, nationality, gender);
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.nbjCA = nbjCA;
+		this.nbjCM = nbjCM;
+	}
+
+	public Staff(String firstName, String lastName, Date birthday, String nationality, String gender, String email,
+			String password, String role, Integer nbjCA, Integer nbjCAR, Integer nbjCM, Integer nbjCMAR) {
+		super(firstName, lastName, birthday, nationality, gender);
+		this.email = email;
+		this.password = password;
+		this.role = role;
+		this.nbjCA = nbjCA;
+		this.nbjCAR = nbjCAR;
+		this.nbjCM = nbjCM;
+		this.nbjCMAR = nbjCMAR;
 	}
 
 }
