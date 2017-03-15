@@ -104,7 +104,7 @@ public class TrainerController {
 
 		Context context = new InitialContext();
 		TrainerServicesRemote trainerServicesRemote = (TrainerServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
 		// List<Trainer> trainer = trainerServicesRemote.findAllTrainers();
 
 		ObservableList<Trainer> data = FXCollections.observableArrayList(trainerServicesRemote.findAllTrainers());
@@ -127,7 +127,7 @@ public class TrainerController {
 	void clickadd(ActionEvent event) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		TrainerServicesRemote trainerServicesRemote = (TrainerServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
 
 		String firstName = f.getText();
 		String lastName = l.getText();
@@ -177,7 +177,7 @@ public class TrainerController {
 	void clickdelete(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		TrainerServicesRemote trainerServicesRemote = (TrainerServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
 
 		trainerServicesRemote.deleteTraining(tabtrainer.getSelectionModel().getSelectedItem());
 		tabtrainer.getItems().remove(tabtrainer.getSelectionModel().getSelectedItem());
@@ -202,7 +202,7 @@ public class TrainerController {
 	void clickup(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		TrainerServicesRemote trainerServicesRemote = (TrainerServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/TrainerServices!tn.esprit.beautifulminds.services.crud.TrainerServicesRemote");
 
 		Trainer st = new Trainer();
 		ObservableList<Trainer> staffs;

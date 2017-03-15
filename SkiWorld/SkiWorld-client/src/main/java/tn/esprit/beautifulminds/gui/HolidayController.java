@@ -41,7 +41,7 @@ public class HolidayController {
 
 		Context context = new InitialContext();
 		HolidayServiceRemote holidayServicesRemote = (HolidayServiceRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
+				"SkiWorld-ear/SkiWorld-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
 
 		ObservableList<Holiday> data = FXCollections.observableArrayList(holidayServicesRemote.findAllHolidays());
 
@@ -65,7 +65,7 @@ public class HolidayController {
 	void clickaccept(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		HolidayServiceRemote holidayServicesRemote = (HolidayServiceRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
+				"SkiWorld-ear/SkiWorld-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
 		Holiday h = tabholi.getSelectionModel().getSelectedItem();
 		h.getEtat();
 		h.setEtat(true);
@@ -88,7 +88,7 @@ public class HolidayController {
 	void clickrefuse(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		HolidayServiceRemote holidayServicesRemote = (HolidayServiceRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
+				"SkiWorld-ear/SkiWorld-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
 
 		// holidayServicesRemote.deleteHoliday(tabholi.getSelectionModel().getSelectedItem());
 		tabholi.getItems().remove(tabholi.getSelectionModel().getSelectedItem());

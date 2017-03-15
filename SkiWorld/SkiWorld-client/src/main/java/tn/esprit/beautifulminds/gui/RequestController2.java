@@ -36,12 +36,12 @@ public class RequestController2 {
 	void clickValide(ActionEvent event) throws NamingException, ParseException {
 		Context context1 = new InitialContext();
 		StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context1.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 		Staff staff = staffServicesRemote.findStaffById(AuthController.getId11());
 
 		Context context2 = new InitialContext();
 		congeServiceRemote CongeServiceRemote = (congeServiceRemote) context2.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/congeService!tn.esprit.beautifulminds.services.other.congeServiceRemote");
+				"SkiWorld-ear/SkiWorld-ejb/congeService!tn.esprit.beautifulminds.services.other.congeServiceRemote");
 		Integer nbrjour = Integer.parseInt(txt.getText());
 		Integer b = CongeServiceRemote.getCar2(staff, nbrjour);
 
@@ -49,7 +49,7 @@ public class RequestController2 {
 
 			Context context = new InitialContext();
 			HolidayServiceRemote holidayServiceRemote = (HolidayServiceRemote) context.lookup(
-					"projet-personnel-ear/projet-personnel-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
+					"SkiWorld-ear/SkiWorld-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
 
 			LocalDate d;
 			d = datepicker.getValue();

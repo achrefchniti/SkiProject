@@ -28,13 +28,25 @@ public class GestionViewAdminController {
     private Button holidaysbtn;
 
     @FXML
-    void applicationsAction(ActionEvent event) {
-    		
+    void applicationsAction(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("Recruitments.fxml"));
+
+		Scene scene = new Scene(root);
+
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
 
     @FXML
-    void feedbacksAction(ActionEvent event) {
+    void feedbacksAction(ActionEvent event) throws IOException {
+    	Parent root = FXMLLoader.load(getClass().getResource("Feedbacks.fxml"));
 
+		Scene scene = new Scene(root);
+
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
 
     @FXML

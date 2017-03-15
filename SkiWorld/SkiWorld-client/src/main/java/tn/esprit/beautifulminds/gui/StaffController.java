@@ -20,11 +20,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 import tn.esprit.beautifulminds.persistence.Staff;
-import tn.esprit.beautifulminds.persistence.Training;
 import tn.esprit.beautifulminds.services.crud.StaffServicesRemote;
-import tn.esprit.beautifulminds.services.crud.TrainingservicesRemote;
 
 public class StaffController {
 
@@ -62,7 +59,7 @@ public class StaffController {
 			context = new InitialContext();
 
 			StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-					"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+					"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 
 			ObservableList<Staff> data = FXCollections.observableArrayList(staffServicesRemote.findAllStaffs());
 
@@ -126,7 +123,7 @@ public class StaffController {
 	void clickAdd(ActionEvent event) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 
 		String firstName = fn.getText();
 		String lastName = ln.getText();
@@ -163,13 +160,13 @@ public class StaffController {
 		st.setNbjCMAR(nbjCMAR);
 		staffServicesRemote.addStaff(st);
 		JOptionPane.showMessageDialog(null, "Staff added");
-		}
+	}
 
 	@FXML
 	void clickdelete(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 
 		staffServicesRemote.deleteStaff(tabstaff.getSelectionModel().getSelectedItem());
 		tabstaff.getItems().remove(tabstaff.getSelectionModel().getSelectedItem());
@@ -193,7 +190,7 @@ public class StaffController {
 	void clickupdate(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 
 		Staff st = new Staff();
 		ObservableList<Staff> staffs;
@@ -238,7 +235,7 @@ public class StaffController {
 		staffServicesRemote.updateStaff(st);
 
 	}
-	
+
 	@FXML
 	private TextField rech;
 
@@ -250,9 +247,8 @@ public class StaffController {
 		String a = rech.getText();
 		Context context = new InitialContext();
 		StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
-ObservableList<Staff> data = FXCollections
-				.observableArrayList(staffServicesRemote.findStaffByRole(a));
+				"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+		ObservableList<Staff> data = FXCollections.observableArrayList(staffServicesRemote.findStaffByRole(a));
 
 		firstname.setCellValueFactory(new PropertyValueFactory<Staff, String>("firstName"));
 		lastname.setCellValueFactory(new PropertyValueFactory<Staff, String>("lastName"));

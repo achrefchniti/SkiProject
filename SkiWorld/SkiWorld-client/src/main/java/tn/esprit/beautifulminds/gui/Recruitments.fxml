@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="590.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.RecruitmentsController">
+	<children>
+		<TabPane layoutX="29.0" layoutY="32.0">
+			<tabs>
+				<Tab text="Applications">
+					<content>
+						<AnchorPane prefHeight="468.0" prefWidth="492.0">
+							<children>
+								<Label layoutX="181.0" layoutY="14.0" text="Applications" underline="true">
+									<font>
+										<Font size="22.0" />
+									</font>
+								</Label>
+										<TableView fx:id="table" layoutY="116.0" prefHeight="257.0" prefWidth="347.0">
+											<columns>
+												<TableColumn fx:id="personId" prefWidth="75.0" text="personId" />
+												<TableColumn fx:id="firstname" prefWidth="75.0" text="firstname" />
+												<TableColumn fx:id="lastname" prefWidth="75.0" text="lastname" />
+												<TableColumn fx:id="role" prefWidth="75.0" text="Role" />
+												<TableColumn fx:id="nationality" prefWidth="75.0" text="Nationality" />
+												<TableColumn fx:id="cv" prefWidth="75.0" text="Cv" />
+												<TableColumn fx:id="status" prefWidth="75.0" text="status" />
+											</columns>
+										</TableView>
+								<Label layoutX="31.0" layoutY="71.0" text="Search">
+									<font>
+										<Font size="15.0" />
+									</font>
+								</Label>
+								<Label layoutX="378.0" layoutY="288.0" text="Nationality">
+									<font>
+										<Font size="15.0" />
+									</font>
+								</Label>
+								<Label layoutX="406.0" layoutY="144.0" text="Role">
+									<font>
+										<Font size="15.0" />
+									</font>
+								</Label>
+                        <Button fx:id="searchbtn" layoutX="281.0" layoutY="63.0" mnemonicParsing="false" onAction="#searchAction" prefHeight="38.0" prefWidth="66.0" style="-fx-background-color: #2196F3;" textFill="WHITE" text="Search"  />
+                        <Button fx:id="hirebtn" layoutX="31.0" layoutY="406.0" mnemonicParsing="false" onAction="#hireAction" prefHeight="41.0" prefWidth="61.0" text="Hire" style="-fx-background-color: #2196F3;" textFill="WHITE"/>
+                        <Button fx:id="rejectbtn" layoutX="140.0" layoutY="407.0" mnemonicParsing="false" onAction="#rejectAction" prefHeight="39.0" prefWidth="67.0" text="Reject" style="-fx-background-color: #2196F3;" textFill="WHITE"/>
+                        <Button fx:id="cvbtn" layoutX="257.0" layoutY="406.0" mnemonicParsing="false" onAction="#openCVAction" prefHeight="42.0" prefWidth="89.0" text="Open CV" style="-fx-background-color: #2196F3;" textFill="WHITE"/>
+                        <ComboBox fx:id="natcbx" layoutX="359.0" layoutY="335.0" onAction="#selectedNationalityAction" prefHeight="25.0" prefWidth="123.0" promptText="Select Nationality" />
+                        <ComboBox fx:id="rolecbx" layoutX="362.0" layoutY="182.0" onAction="#selectedRoleAction" prefHeight="25.0" prefWidth="118.0" promptText="Select Role..." />
+                        <TextField fx:id="searchtxt" layoutX="107.0" layoutY="70.0" promptText="search..." />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
+</AnchorPane>

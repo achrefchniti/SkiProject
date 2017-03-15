@@ -61,7 +61,7 @@ public class MonCompteController {
 		try {
 			Context context = new InitialContext();
 			StaffServicesRemote staffServicesRemote = (StaffServicesRemote) context.lookup(
-					"projet-personnel-ear/projet-personnel-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
+					"SkiWorld-ear/SkiWorld-ejb/StaffServices!tn.esprit.beautifulminds.services.crud.StaffServicesRemote");
 			Staff staff2 = staffServicesRemote.findStaffById(AuthController.getId11());
 			// ObservableList<Staff> data = FXCollections
 			// .observableArrayList(staffServicesRemote.findStaffById(AuthController.getId11()));
@@ -78,7 +78,7 @@ public class MonCompteController {
 			l10.setText("jours de congé maladie permis: " + staff2.getNbjCMAR());
 			//////
 			HolidayServiceRemote holidayServiceRemote = (HolidayServiceRemote) context.lookup(
-					"projet-personnel-ear/projet-personnel-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
+					"SkiWorld-ear/SkiWorld-ejb/HolidayService!tn.esprit.beautifulminds.services.crud.HolidayServiceRemote");
 
 			ObservableList<Holiday> data = FXCollections
 					.observableArrayList(holidayServiceRemote.findAllHolidaysPerPerson(AuthController.getId11()));

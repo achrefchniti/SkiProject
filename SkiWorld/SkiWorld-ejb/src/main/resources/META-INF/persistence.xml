@@ -10,10 +10,15 @@
 		<class>tn.esprit.beautifulminds.persistence.Customer</class>
 		<class>tn.esprit.beautifulminds.persistence.Event</class>
 		<class>tn.esprit.beautifulminds.persistence.Feedback</class>
+		<class>tn.esprit.beautifulminds.persistence.Holiday</class>
 		<class>tn.esprit.beautifulminds.persistence.Material</class>
 		<class>tn.esprit.beautifulminds.persistence.Memory</class>
+		<class>tn.esprit.beautifulminds.persistence.Person</class>
 		<class>tn.esprit.beautifulminds.persistence.Shop</class>
+		<class>tn.esprit.beautifulminds.persistence.Staff</class>
 		<class>tn.esprit.beautifulminds.persistence.Station</class>
+		<class>tn.esprit.beautifulminds.persistence.Trainer</class>
+		<class>tn.esprit.beautifulminds.persistence.Training</class>
 		<class>tn.esprit.beautifulminds.persistence.User</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />

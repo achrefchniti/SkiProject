@@ -8,5 +8,35 @@
         <dependent-module archiveName="SkiWorld-ejb.jar" deploy-path="/" handle="module:/resource/SkiWorld-ejb/SkiWorld-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="pdfbox.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/pdfbox/2.0.1/pdfbox-2.0.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="fontbox.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/fontbox/2.0.0/fontbox-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jempbox.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/jempbox/1.8.11/jempbox-1.8.11.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xmpbox.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/xmpbox/2.0.0/xmpbox-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="preflight.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/preflight/2.0.0/preflight-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pdfbox-tools.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/pdfbox-tools/2.0.0/pdfbox-tools-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-compress.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/commons/commons-compress/1.9/commons-compress-1.9.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-api.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="pdfbox-debugger.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/apache/pdfbox/pdfbox-debugger/2.0.0/pdfbox-debugger-2.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

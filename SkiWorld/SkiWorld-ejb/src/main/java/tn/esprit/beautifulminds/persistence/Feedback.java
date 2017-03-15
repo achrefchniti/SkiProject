@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
 public class Feedback implements Serializable {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer feedbackId;
 	private String content;
 	private String status;

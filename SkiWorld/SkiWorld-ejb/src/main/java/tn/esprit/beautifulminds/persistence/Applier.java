@@ -3,7 +3,9 @@ package tn.esprit.beautifulminds.persistence;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 /**
@@ -14,8 +16,12 @@ import javax.persistence.ManyToOne;
 
 public class Applier extends Person implements Serializable {
 
+	@Lob
+	@Column(name = "cv", length = 100000)
 	private String cv;
 	private String role;
+	private String status;
+
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
@@ -23,6 +29,8 @@ public class Applier extends Person implements Serializable {
 
 	public Applier() {
 		super();
+		this.status = "Pending";
+
 	}
 
 	public Admin getAdmin() {
@@ -54,6 +62,14 @@ public class Applier extends Person implements Serializable {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

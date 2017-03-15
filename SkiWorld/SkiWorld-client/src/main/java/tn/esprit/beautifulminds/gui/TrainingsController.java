@@ -94,7 +94,7 @@ public class TrainingsController {
 			context = new InitialContext();
 
 			TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-					"/projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+					"/SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 			// List<Training> T = trainingservicesRemote.findAllTrainings();
 
 			ObservableList<Training> data = FXCollections
@@ -123,47 +123,46 @@ public class TrainingsController {
 	@FXML
 	void clickbuttonB(ActionEvent event) throws ParseException, NamingException {
 		Context context;
-		
-			context = new InitialContext();
 
-			TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-					"/projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
-			String name = na.getText();
-			Integer capacity = Integer.parseInt(cap.getText());
-			String categorie = cat.getText();
+		context = new InitialContext();
 
-			// date.setValue(LocalDate.now());
-			// date.setShowWeekNumbers(true);
-			LocalDate d;
-			d = date.getValue();
-			String s = d.toString();
-			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD");
-			// System.out.println("*********" + s);
-			Date dateBegin = format.parse(s);
-			// System.out.println("*********" + dateBegin);
-			// Integer station = Integer.parseInt(st.getText());
-			Integer durationDay = Integer.parseInt(dd.getText());
-			Integer durationHour = Integer.parseInt(dh.getText());
-			Float fees = Float.parseFloat(fe.getText());
-			Integer hourBegin = Integer.parseInt(hb.getText());
-			String trainer = tr.getText();
-			String type = ty.getText();
+		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
+				"/SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+		String name = na.getText();
+		Integer capacity = Integer.parseInt(cap.getText());
+		String categorie = cat.getText();
 
-			Training T = new Training();
-			T.setName(name);
-			T.setType(type);
-			T.setCategorie(categorie);
-			T.setDateBegin(dateBegin);
-			T.setHourBegin(hourBegin);
-			T.setDurationDay(durationDay);
-			T.setDurationHour(durationHour);
-			T.setTrainer(trainer);
-			T.setFees(fees);
-			T.setCapacity(capacity);
-			trainingservicesRemote.addTraining(T);
-		
-		//JOptionPane.showMessageDialog(null, "lesson added");
-		
+		// date.setValue(LocalDate.now());
+		// date.setShowWeekNumbers(true);
+		LocalDate d;
+		d = date.getValue();
+		String s = d.toString();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-DD");
+		// System.out.println("*********" + s);
+		Date dateBegin = format.parse(s);
+		// System.out.println("*********" + dateBegin);
+		// Integer station = Integer.parseInt(st.getText());
+		Integer durationDay = Integer.parseInt(dd.getText());
+		Integer durationHour = Integer.parseInt(dh.getText());
+		Float fees = Float.parseFloat(fe.getText());
+		Integer hourBegin = Integer.parseInt(hb.getText());
+		String trainer = tr.getText();
+		String type = ty.getText();
+
+		Training T = new Training();
+		T.setName(name);
+		T.setType(type);
+		T.setCategorie(categorie);
+		T.setDateBegin(dateBegin);
+		T.setHourBegin(hourBegin);
+		T.setDurationDay(durationDay);
+		T.setDurationHour(durationHour);
+		T.setTrainer(trainer);
+		T.setFees(fees);
+		T.setCapacity(capacity);
+		trainingservicesRemote.addTraining(T);
+
+		// JOptionPane.showMessageDialog(null, "lesson added");
 
 	}
 
@@ -174,7 +173,7 @@ public class TrainingsController {
 	void clickDelete(ActionEvent event) throws NamingException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 		trainingservicesRemote.deleteTraining(tabtraining.getSelectionModel().getSelectedItem());
 		tabtraining.getItems().remove(tabtraining.getSelectionModel().getSelectedItem());
 	}
@@ -217,7 +216,7 @@ public class TrainingsController {
 	void clickupp(ActionEvent event) throws NamingException, ParseException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 
 		Training T = new Training();
 
@@ -290,7 +289,7 @@ public class TrainingsController {
 		String a = rech.getText();
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 		ObservableList<Training> data = FXCollections
 				.observableArrayList(trainingservicesRemote.findTrainingsByType2(a));
 
