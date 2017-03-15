@@ -8,15 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane minHeight="600.0" minWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.GestionViewAdminController">
    <children>
       <ImageView fitHeight="616.0" fitWidth="682.0" layoutX="-44.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/plan.png" />
          </image>
       </ImageView>
-      <Button layoutX="62.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Stations" textAlignment="CENTER" textFill="#3432bc">
+      <Button fx:id="stationsbtn" layoutX="45.0" layoutY="295.0" mnemonicParsing="false" onAction="#stationsAction" prefHeight="48.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Stations" textAlignment="CENTER" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -29,12 +28,12 @@
             <Reflection />
          </effect>
       </Label>
-      <Button layoutX="236.0" layoutY="285.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="116.0" style="-fx-background-radius: 10;" text="Applications" textFill="#3432bc">
+      <Button fx:id="applicationsbtn" layoutX="236.0" layoutY="292.0" mnemonicParsing="false" onAction="#applicationsAction" prefHeight="54.0" prefWidth="116.0" style="-fx-background-radius: 10;" text="Applications" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="440.0" layoutY="380.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Feedbacks" textFill="#3432bc">
+      <Button fx:id="feedbacksbtn" layoutX="452.0" layoutY="292.0" mnemonicParsing="false" onAction="#feedbacksAction" prefHeight="54.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Feedbacks" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -44,21 +43,36 @@
             <Image url="@../pic/applier.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="451.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="452.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/feedback.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="68.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="56.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/stations.png" />
          </image>
       </ImageView>
-      <Button layoutX="276.0" layoutY="557.0" mnemonicParsing="false" text="Exit" textFill="#2b3286" />
-      <Button layoutX="256.0" layoutY="467.0" mnemonicParsing="false" text="Add Manager" textFill="#3728bc">
+      <Button layoutX="534.0" layoutY="556.0" mnemonicParsing="false" text="Exit" textFill="#2b3286" />
+      <ImageView fitHeight="130.0" fitWidth="99.0" layoutX="144.0" layoutY="391.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/staff.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="managersbtn" layoutX="144.0" layoutY="508.0" mnemonicParsing="false" onAction="#managersAction" prefHeight="48.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Managers" textAlignment="CENTER" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
+      <Button fx:id="holidaysbtn" layoutX="369.0" layoutY="508.0" mnemonicParsing="false" onAction="#holidaysAction" prefHeight="48.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Holidays" textAlignment="CENTER" textFill="#3432bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="99.0" fitWidth="99.0" layoutX="366.0" layoutY="394.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/calen.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

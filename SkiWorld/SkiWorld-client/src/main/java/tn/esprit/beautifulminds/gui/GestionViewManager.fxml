@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.GestionManagerController">
    <children>
       <ImageView fitHeight="632.0" fitWidth="637.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -23,36 +23,31 @@
             <Reflection />
          </effect>
       </Label>
-      <Button layoutX="49.0" layoutY="366.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="125.0" style="-fx-background-radius: 10;" text="Trainings" textFill="#3432bc">
+      <Button fx:id="trainings" layoutX="40.0" layoutY="266.0" mnemonicParsing="false" onAction="#trainingsAction" prefHeight="48.0" prefWidth="125.0" style="-fx-background-radius: 10;" text="Trainings" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <ImageView fitHeight="99.0" fitWidth="125.0" layoutX="58.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="99.0" fitWidth="125.0" layoutX="49.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/trainer.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="468.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../pic/calen.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="468.0" layoutY="366.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="88.0" style="-fx-background-radius: 10;" text="Holidays" textFill="#3432bc">
+      <Button fx:id="staffs" layoutX="252.0" layoutY="266.0" mnemonicParsing="false" onAction="#staffsAction" prefHeight="48.0" prefWidth="107.0" style="-fx-background-radius: 10;" text="Staffs" textFill="#3432bc">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="261.0" layoutY="366.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="107.0" style="-fx-background-radius: 10;" text="Staffs" textFill="#3432bc">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="102.0" fitWidth="99.0" layoutX="265.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="102.0" fitWidth="99.0" layoutX="256.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/staff.png" />
          </image>
       </ImageView>
       <Button layoutX="276.0" layoutY="557.0" mnemonicParsing="false" text="Exit" textFill="#2b3286" />
+      <Button fx:id="trainers" layoutX="454.0" layoutY="266.0" mnemonicParsing="false" onAction="#trainersAction" prefHeight="48.0" prefWidth="125.0" style="-fx-background-radius: 10;" text="Trainers" textFill="#3432bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

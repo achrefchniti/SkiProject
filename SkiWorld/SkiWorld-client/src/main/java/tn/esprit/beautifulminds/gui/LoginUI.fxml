@@ -34,5 +34,6 @@
       <Label layoutX="458.0" layoutY="123.0" text="Email" />
       <TextField fx:id="pwdtext" layoutX="406.0" layoutY="232.0" promptText="enter your password" />
       <TextField fx:id="emailtext" layoutX="406.0" layoutY="150.0" promptText="Enter your email" />
+      <Button fx:id="pers" layoutX="81.0" layoutY="332.0" mnemonicParsing="false" onAction="#clickpers" text="consult personnal account" />
 	</children>
 </AnchorPane>

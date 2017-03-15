@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tn.esprit.beautifulminds.persistence.Admin;
+import tn.esprit.beautifulminds.persistence.Person;
 import tn.esprit.beautifulminds.persistence.Staff;
 import tn.esprit.beautifulminds.services.crud.AdminServiceLocal;
 import tn.esprit.beautifulminds.services.crud.StaffServicesLocal;
@@ -33,15 +34,16 @@ public class LoginService implements LoginServiceRemote, LoginServiceLocal {
 
 	}
 
+	
 	@EJB
 	private AdminServiceLocal as;
 
 	@EJB
 	private StaffServicesLocal ss;
-	String auth;
+	Integer auth;
 
 	@Override
-	public String isAuthentified(String email, String password) throws NamingException {
+	public Integer isAuthentified(String email, String password) throws NamingException {
 		// TODO Auto-generated method stub
 		// admin.setEmail(email);
 		// admin.setPassword(password);
@@ -51,13 +53,15 @@ public class LoginService implements LoginServiceRemote, LoginServiceLocal {
 		System.out.println("get list************");
 		List<Admin> admins = as.retrieveAdmins();
 		System.out.println("list OKKKKKK");
+		
 
 		for (Admin p : admins) {
 
 			if (email.equals(p.getEmail())) {
 				if (password.equals(p.getPassword())) {
-					auth = "Admin";
+					auth = p.getPersonId();
 					this.admin = p;
+					
 					System.out.println("auth");
 					System.out.println(this.admin.getPersonId());
 					break;
@@ -75,7 +79,7 @@ public class LoginService implements LoginServiceRemote, LoginServiceLocal {
 			if (email.equals(s.getEmail())) {
 				if (password.equals(s.getPassword())) {
 					if (s.getRole().equals("Manager")) {
-						auth = "Manager";
+						auth = s.getPersonId();
 						this.staff = s;
 						System.out.println("auth");
 						System.out.println(this.staff.getPersonId());

@@ -78,5 +78,18 @@ public class LoginController {
 			System.out.println("Error...");
 		}
 	}
+	  @FXML
+	    private Button pers;
 
+	    @FXML
+	    void clickpers(ActionEvent event) throws IOException {
+	    	Stage stage = new Stage();
+			stage.setTitle("Mon Compte");
+
+			Scene scene;
+			scene = new Scene(FXMLLoader.load(getClass().getResource("Authent.fxml")));
+
+			stage.setScene(scene);
+			stage.show();
+	    }
 }

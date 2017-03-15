@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.HolidayController">
+   <children>
+      <Label layoutX="226.0" layoutY="39.0" text="Holidays">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tabholi" layoutX="63.0" layoutY="300.0" prefHeight="200.0" prefWidth="475.0">
+        <columns>
+          <TableColumn fx:id="idHoliday" prefWidth="75.0" text="ID person" />
+          <TableColumn fx:id="dateDemande" prefWidth="125.0" text="Date of request" />
+            <TableColumn fx:id="dateDepart" prefWidth="106.0" text="Date of leaving" />
+            <TableColumn fx:id="nbrjour" prefWidth="77.0" text="Days" />
+            <TableColumn fx:id="etat" prefWidth="91.0" text="Etat" />
+        </columns>
+      </TableView>
+      <Button fx:id="accept" layoutX="92.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickaccept" text="Accept" />
+      <Button fx:id="refuse" layoutX="415.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickrefuse" text="Refuse" />
+   </children>
+</AnchorPane>
