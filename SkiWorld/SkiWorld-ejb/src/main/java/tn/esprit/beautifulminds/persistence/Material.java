@@ -31,6 +31,12 @@ public class Material implements Serializable {
 		this.shop = shop;
 	}
 
+	public Material(String name, String fournisseur) {
+		super();
+		this.name = name;
+		this.fournisseur = fournisseur;
+	}
+
 	public String getName() {
 		return name;
 	}

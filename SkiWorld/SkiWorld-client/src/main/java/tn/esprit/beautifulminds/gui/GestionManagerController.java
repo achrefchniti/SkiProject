@@ -11,17 +11,24 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class GestionManagerController {
-	
-	
+
 	@FXML
 	private Button trainings;
-
 
 	@FXML
 	private Button staffs;
 
 	@FXML
 	private Button trainers;
+
+	@FXML
+	private Button materials;
+
+	@FXML
+	private Button shops;
+
+	@FXML
+	private Button events;
 
 	@FXML
 	void holidaysAction(ActionEvent event) throws IOException {
@@ -70,6 +77,38 @@ public class GestionManagerController {
 		stage.show();
 
 	}
-	 
+
+	@FXML
+	void eventsAction(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("Events.fxml"));
+
+		Scene scene = new Scene(root);
+
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	@FXML
+	void materialsAction(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("MaterialServices.fxml"));
+
+		Scene scene = new Scene(root);
+
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+	}
+
+	@FXML
+	void shopsAction(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("ShopServices.fxml"));
+
+		Scene scene = new Scene(root);
+
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+	}
 
 }

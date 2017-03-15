@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#SearchAction" prefHeight="400.0" prefWidth="754.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.EventsController">
+   <children>
+      <TableView fx:id="tableevent" layoutX="429.0" layoutY="69.0" prefHeight="321.0" prefWidth="305.0">
+        <columns>
+          <TableColumn fx:id="titleevent" prefWidth="75.0" text="Title" />
+          <TableColumn fx:id="placeevent" prefWidth="75.0" text="Place" />
+            <TableColumn fx:id="startdateevent" prefWidth="75.0" text="Start Date" />
+            <TableColumn fx:id="finishdateevent" prefWidth="75.0" text="Finish Date" />
+        </columns>
+      </TableView>
+     
+      <Button fx:id="deletebut" layoutX="310.0" layoutY="285.0" mnemonicParsing="false" onAction="#DeleteAction" prefHeight="25.0" prefWidth="99.0" text="DELETE EVENT" />
+      <Button fx:id="modifyevent" layoutX="310.0" layoutY="341.0" mnemonicParsing="false" onAction="#ModifyAction" text="MODIFY EVENT" />
+      <TextField fx:id="SearchID" layoutX="507.0" layoutY="22.0" onAction="#SearchAction" promptText="Search" />
+      <Button fx:id="deletebut1" layoutX="310.0" layoutY="238.0" mnemonicParsing="false" onAction="#AddAction" prefHeight="25.0" prefWidth="99.0" text="ADD" />
+      <TextArea fx:id="description" layoutX="33.0" layoutY="256.0" prefHeight="92.0" prefWidth="260.0" promptText="Description" />
+      <ComboBox fx:id="place" layoutX="33.0" layoutY="201.0" prefHeight="25.0" prefWidth="174.0" promptText="Place" />
+      <DatePicker fx:id="finishdate" layoutX="33.0" layoutY="146.0" prefHeight="25.0" prefWidth="174.0" promptText="finish date" />
+      <DatePicker fx:id="startdate" layoutX="33.0" layoutY="98.0" promptText="start date" />
+      <TextField fx:id="title" layoutX="32.0" layoutY="47.0" promptText="title" />
+   </children>
+</AnchorPane>
