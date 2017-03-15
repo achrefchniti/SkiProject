@@ -6,6 +6,6 @@ import javax.naming.NamingException;
 @Local
 public interface LoginServiceLocal {
 
-	public boolean isAuthentified(String email, String password) throws NamingException;
+	public String isAuthentified(String email, String password) throws NamingException;
 
 }

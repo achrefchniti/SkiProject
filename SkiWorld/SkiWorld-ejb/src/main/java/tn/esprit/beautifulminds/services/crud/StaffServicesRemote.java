@@ -19,5 +19,6 @@ public interface StaffServicesRemote {
 
 	List<Staff> findAllStaffs();
 	List<Staff> findStaffByRole(String role);
+	public List<Staff> afficheStaff();
 
 }
