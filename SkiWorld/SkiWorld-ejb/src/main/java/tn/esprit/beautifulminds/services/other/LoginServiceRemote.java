@@ -9,7 +9,7 @@ import tn.esprit.beautifulminds.persistence.Staff;
 @Remote
 public interface LoginServiceRemote {
 
-	public Integer isAuthentified(String email, String password) throws NamingException;
+	public String isAuthentified(String email, String password) throws NamingException;
 	
 	
 }
