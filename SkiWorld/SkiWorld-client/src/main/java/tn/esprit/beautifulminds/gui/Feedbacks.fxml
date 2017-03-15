@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
@@ -9,6 +10,11 @@
 
 <AnchorPane prefHeight="590.0" prefWidth="557.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.FeedbacksController">
 	<children>
+      <ImageView fitHeight="598.0" fitWidth="616.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/plan.png" />
+         </image>
+      </ImageView>
 		<TabPane layoutX="29.0" layoutY="32.0">
 			<tabs>
 				<Tab text="Feedbacks">
@@ -25,8 +31,8 @@
 										<TableColumn fx:id="feedbackId" prefWidth="75.0" text="feedbackId" />
 										<TableColumn fx:id="content" prefWidth="75.0" text="Content" />
 										<TableColumn fx:id="status" prefWidth="75.0" text="Status" />
-										<TableColumn fx:id="date" prefWidth="75.0" text="Date" />
-										<TableColumn fx:id="user" prefWidth="75.0" text="User" />
+										<TableColumn fx:id="date" prefWidth="46.0" text="Date" />
+										<TableColumn fx:id="user" prefWidth="104.0" text="User" />
 									</columns>
 								</TableView>
 								<Label layoutX="31.0" layoutY="71.0" text="Search">

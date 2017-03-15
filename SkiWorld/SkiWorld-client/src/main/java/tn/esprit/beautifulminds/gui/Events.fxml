@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -15,6 +16,11 @@
             <TableColumn fx:id="finishdateevent" prefWidth="75.0" text="Finish Date" />
         </columns>
       </TableView>
+      <ImageView fitHeight="726.0" fitWidth="774.0" layoutX="-2.0" layoutY="-74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/plan.png" />
+         </image>
+      </ImageView>
      
       <Button fx:id="deletebut" layoutX="310.0" layoutY="285.0" mnemonicParsing="false" onAction="#DeleteAction" prefHeight="25.0" prefWidth="99.0" text="DELETE EVENT" />
       <Button fx:id="modifyevent" layoutX="310.0" layoutY="341.0" mnemonicParsing="false" onAction="#ModifyAction" text="MODIFY EVENT" />

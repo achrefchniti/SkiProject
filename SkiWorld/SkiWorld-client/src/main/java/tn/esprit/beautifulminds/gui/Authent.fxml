@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane minHeight="600.0" minWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.AuthController">
-   <center>
-      <TextField fx:id="id" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets left="50.0" right="50.0" />
-         </BorderPane.margin>
-      </TextField>
-   </center>
+<BorderPane minHeight="300.0" minWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.beautifulminds.gui.AuthController">
    <bottom>
-      <Button fx:id="ok" mnemonicParsing="false" onAction="#clickok" text="ok" BorderPane.alignment="CENTER">
+      <Button fx:id="ok" mnemonicParsing="false" onAction="#clickok" text="Valide" BorderPane.alignment="CENTER">
          <BorderPane.margin>
-            <Insets bottom="200.0" />
+            <Insets bottom="100.0" />
          </BorderPane.margin>
       </Button>
    </bottom>
+   <left>
+      <TextField fx:id="id" prefHeight="25.0" prefWidth="141.0" promptText="enter your Identifier" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="200.0" right="20.0" top="50.0" />
+         </BorderPane.margin>
+      </TextField>
+   </left>
 </BorderPane>
