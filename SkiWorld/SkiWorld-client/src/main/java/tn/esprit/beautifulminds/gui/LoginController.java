@@ -49,7 +49,7 @@ public class LoginController {
 		if (lsr.isAuthentified(email, password).equals("Admin")) {
 
 			System.out.println("logged in...");
-			Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("GestionViewAdmin.fxml"));
 
 			Scene scene = new Scene(root);
 
@@ -65,7 +65,7 @@ public class LoginController {
 			staff.setPassword(password);
 
 			System.out.println("role" + staff.getRole());
-			Parent root = FXMLLoader.load(getClass().getResource("Manager.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("GestionViewManager.fxml"));
 
 			Scene scene = new Scene(root);
 

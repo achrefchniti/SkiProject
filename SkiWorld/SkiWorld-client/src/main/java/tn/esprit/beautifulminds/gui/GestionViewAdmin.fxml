@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane minHeight="600.0" minWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <ImageView fitHeight="616.0" fitWidth="682.0" layoutX="-44.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/plan.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="62.0" layoutY="383.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Stations" textAlignment="CENTER" textFill="#3432bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="160.0" layoutY="49.0" text="WELLCOME" textFill="#2b20ab">
+         <font>
+            <Font name="Batang" size="52.0" />
+         </font>
+         <effect>
+            <Reflection />
+         </effect>
+      </Label>
+      <Button layoutX="236.0" layoutY="285.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="116.0" style="-fx-background-radius: 10;" text="Applications" textFill="#3432bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="440.0" layoutY="380.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="99.0" style="-fx-background-radius: 10;" text="Feedbacks" textFill="#3432bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="256.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/applier.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="88.0" layoutX="451.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/feedback.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="95.0" fitWidth="88.0" layoutX="68.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pic/stations.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="276.0" layoutY="557.0" mnemonicParsing="false" text="Exit" textFill="#2b3286" />
+      <Button layoutX="256.0" layoutY="467.0" mnemonicParsing="false" text="Add Manager" textFill="#3728bc">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
