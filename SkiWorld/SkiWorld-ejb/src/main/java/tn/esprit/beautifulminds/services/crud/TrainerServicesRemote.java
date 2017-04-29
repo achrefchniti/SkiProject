@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Remote;
 
 import tn.esprit.beautifulminds.persistence.Trainer;
+import tn.esprit.beautifulminds.persistence.Training;
 
 @Remote
 public interface TrainerServicesRemote {
@@ -17,4 +18,5 @@ public interface TrainerServicesRemote {
 	void updateTraining(Trainer trainer);
 
 	List<Trainer> findAllTrainers();
+	Trainer findTrainerByName(String name);
 }

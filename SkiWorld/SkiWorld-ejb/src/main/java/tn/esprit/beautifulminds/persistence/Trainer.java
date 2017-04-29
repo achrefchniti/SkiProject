@@ -167,4 +167,5 @@ public class Trainer extends Person implements Serializable {
 		this.ratingPoints = ratingPoints;
 	}
 
+	
 }

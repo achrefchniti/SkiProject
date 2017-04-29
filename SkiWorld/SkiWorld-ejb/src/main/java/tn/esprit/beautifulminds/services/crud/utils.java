@@ -42,5 +42,18 @@ public class utils {
 		tr.setFees(9);
 		tr.setCapacity(20);
 		entityManager.persist(tr);
+		
+		Training tr1 = new Training();
+		tr1.setName("ent1");
+		tr1.setType("water");
+		tr1.setCategorie("amateur");
+		SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		tr1.setHourBegin(18);
+		tr1.setDurationDay(9);
+		tr1.setDurationHour(2);
+		tr1.setTrainer("toto");
+		tr1.setFees(9);
+		tr1.setCapacity(20);
+		entityManager.persist(tr1);
 	}
 }

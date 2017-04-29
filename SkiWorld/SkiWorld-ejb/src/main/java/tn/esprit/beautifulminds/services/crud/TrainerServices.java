@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tn.esprit.beautifulminds.persistence.Trainer;
+import tn.esprit.beautifulminds.persistence.Training;
 
 /**
  * Session Bean implementation class TrainerServices
@@ -49,6 +50,11 @@ public class TrainerServices implements TrainerServicesRemote, TrainerServicesLo
 	@Override
 	public List<Trainer> findAllTrainers() {
 		return entityManager.createQuery("select ent from Trainer ent ").getResultList();
+	}
+
+	public Trainer findTrainerByName(String name) {
+		return entityManager.createQuery("select a from Trainer a where a.firstName=:p", Trainer.class)
+				.setParameter("p", name).getSingleResult();
 	}
 
 }

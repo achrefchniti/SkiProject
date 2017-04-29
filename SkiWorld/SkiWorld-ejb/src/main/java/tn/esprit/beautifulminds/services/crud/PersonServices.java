@@ -49,5 +49,6 @@ public class PersonServices implements PersonServicesRemote, PersonServicesLocal
 	public List<Person> findAllPersons() {
 		return entityManager.createQuery("select per from Person per ").getResultList();
 	}
+	
 
 }

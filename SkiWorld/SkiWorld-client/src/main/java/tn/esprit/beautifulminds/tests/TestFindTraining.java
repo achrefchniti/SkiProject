@@ -11,8 +11,12 @@ public class TestFindTraining {
 	public static void main(String[] args) throws NamingException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 	Training training2= trainingservicesRemote.findTrainingById(1);
-	System.out.println(training2.getName());
+	System.out.println(training2.getCapacity());
+//Integer a=trainingservicesRemote.getCap(training2);
+//System.out.println(a);
+//training2.setCapacity(a);
+//trainingservicesRemote.updateTraining(training2);
 	}
 }

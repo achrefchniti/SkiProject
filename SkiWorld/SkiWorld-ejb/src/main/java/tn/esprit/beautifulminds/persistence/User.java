@@ -18,6 +18,7 @@ public class User extends Person implements Serializable {
 	private String email;
 	private String password;
 	private Boolean vip;
+	private float somme;
 
 	@ManyToMany(mappedBy = "users")
 	private List<Training> trainings;
@@ -112,6 +113,14 @@ public class User extends Person implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public float  getSomme() {
+		return somme;
+	}
+
+	public void setSomme(float somme) {
+		this.somme = somme;
 	}
 
 }

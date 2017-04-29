@@ -66,4 +66,33 @@ public class Trainingservices implements TrainingservicesRemote, Trainingservice
 
 	}
 
+	
+
+	@Override
+	public void getCap(Training  training) {
+		Integer a = training.getCapacity();
+		Integer b=a-1;
+		training.setCapacity(b);
+		 entityManager.merge(training);
+	}
+
+	@Override
+	public Training findTrainingsByName(String name) {
+		return entityManager.createQuery("SELECT c FROM Training c WHERE c.trainer=:p", Training.class)
+				.setParameter("p", name).getSingleResult();
+
+	}
+
+	public float getFees(Training tr) {
+		float a=tr.getFees();
+		return a;
+	}
+
+	@Override
+	public Integer capa(Training training) {
+		Integer a=training.getCapacity();
+		return a;
+	}
+	
+
 }

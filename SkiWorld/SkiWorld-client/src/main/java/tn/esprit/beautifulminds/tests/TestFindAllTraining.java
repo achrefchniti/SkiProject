@@ -13,11 +13,11 @@ public class TestFindAllTraining {
 	public static void main(String[] args) throws NamingException {
 		Context context = new InitialContext();
 		TrainingservicesRemote trainingservicesRemote = (TrainingservicesRemote) context.lookup(
-				"projet-personnel-ear/projet-personnel-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
+				"SkiWorld-ear/SkiWorld-ejb/Trainingservices!tn.esprit.beautifulminds.services.crud.TrainingservicesRemote");
 		List<Training> training = trainingservicesRemote.findAllTrainings();
 
 		for (Training t : training) {
-			System.out.println(t.getType());
+			System.out.println(t);
 		}
 
 	}

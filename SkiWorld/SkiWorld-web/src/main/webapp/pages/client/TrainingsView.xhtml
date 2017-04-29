@@ -1,0 +1,130 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/template/template.xhtml" xmlns:p="http://primefaces.org/ui">
+	<ui:define name="title">Trainings</ui:define>
+	<ui:define name="content">
+		<h:form id="form">
+
+			<p:growl id="msgs" showDetail="true" />
+			<h1>Hello #{identity.client.firstName}
+				#{identity.client.lastName}</h1>
+			<p:dataTable id="eventsDT" var="car"
+				value="#{trainingBean.trainings}" selectionMode="single"
+				selection="#{trainingBean.trainingSelected}"
+				rowKey="#{car.idTraining}">
+				<f:facet name="header">
+            Our trainings
+        </f:facet>
+				<p:growl id="message" showDetail="true" />
+				<p:ajax event="rowSelect" listener="#{trainingBean.onRowSelect}"
+					update=":form:msgs :form:trainer" />
+
+
+				<p:ajax event="rowUnselect" listener="#{trainingBean.onRowUnselect}"
+					update=":form:msgs :form:trainer" />
+
+				<!-- 				<p:column headerText="Id"> -->
+				<!-- 					<h:outputText value="#{car.idTraining}" /> -->
+				<!-- 				</p:column> -->
+				<p:column headerText="Name">
+					<h:outputText value="#{car.name}" />
+				</p:column>
+				<p:column headerText="Capacity">
+					<h:outputText value="#{car.capacity}" />
+				</p:column>
+				<p:column headerText="Category">
+					<h:outputText value="#{car.categorie}" />
+				</p:column>
+				<p:column headerText="Type">
+					<h:outputText value="#{car.type}" />
+				</p:column>
+				<p:column headerText="Date Begin">
+					<h:outputText value="#{car.dateBegin}" />
+				</p:column>
+				<p:column headerText="Duration by day">
+					<h:outputText value="#{car.durationDay}" />
+				</p:column>
+				<p:column headerText="Hour begin">
+					<h:outputText value="#{car.hourBegin}" />
+				</p:column>
+				<p:column headerText="Duration by hour">
+					<h:outputText value="#{car.durationHour}" />
+				</p:column>
+				<p:column headerText="Trainer">
+					<h:outputText value="#{car.trainer}" />
+				</p:column>
+				<p:column headerText="Fees">
+					<h:outputText value="#{car.fees}" />
+				</p:column>
+
+
+			</p:dataTable>
+
+
+
+
+
+			<h:dataTable var="a" id="trainer" value="#{trainingBean.trainer}">
+
+				<h:column>
+					<h5 style="color: blue;">First_name :
+						<h:outputText value="#{a.firstName} " />
+					</h5>
+					<h5 style="color: blue;">Last_name :
+						<h:outputText value=" #{a.lastName} " />
+					</h5>
+					<h5 style="color: blue;">Email :
+						<h:outputText value=" #{a.email} " />
+					</h5>
+					<h5 style="color: blue;">Gender :
+						<h:outputText value=" #{a.gender} " />
+					</h5>
+					<h5 style="color: blue;">Experience :
+						<h:outputText value=" #{a.experience} " />
+					</h5>
+					<h5 style="color: blue;">Description:
+						<h:outputText value=" #{a.description} " />
+					</h5>
+					<h5 style="color: blue;">Categorie :
+						<h:outputText value=" #{a.categorie} " />
+					</h5>
+					<h5 style="color: blue;">Opinions :
+						<h:outputText value=" #{a.ratingPoints} " />
+					</h5>
+
+				</h:column>
+			</h:dataTable>
+
+
+			<p:growl id="message" showDetail="true" />
+
+			<p:commandButton value="participate"
+				actionListener="#{trainingBean.payer()}" update="message">
+				<p:confirm header="Confirmation"
+					message="Would you participate at this training? "
+					icon="ui-icon-alert" />
+
+			</p:commandButton>
+
+			<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+				<p:button value="Yes" styleClass="ui-confirmdialog-yes"
+					icon="ui-icon-check" outcome="/pages/client/participerView">
+					<f:param name="productId" value="10" />
+				</p:button>
+				<p:button value="No" styleClass="ui-confirmdialog-no"
+					icon="ui-icon-close" action="#{trainingBean.doNo()}" />
+				<!-- 				<f:param name="productId" value="10" /> -->
+				<!-- 				</p:button> -->
+			</p:confirmDialog>
+
+		</h:form>
+
+
+	</ui:define>
+
+
+</ui:composition>
